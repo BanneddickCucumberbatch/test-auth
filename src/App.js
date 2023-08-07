@@ -7,7 +7,7 @@ import RegisterPage from './routes/RegisterPage';
 function App() {
   return (
       <Routes>
-        <Route path="/" Component={ <Navigate to="/login" /> }/>
+        <Route path="/" Component={ProfileInfo}/>
         <Route path="/login" Component={LoginPage}/>
         <Route path="/register" Component={RegisterPage}/>
       </Routes>
