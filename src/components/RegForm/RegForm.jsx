@@ -55,9 +55,12 @@ const RegForm = ({title, handleClick}) => {
                 required
                 minLength={8}
                 // pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])"
+                onKeyUp={() => handleClick(email, pass, firstName, lastName, age)}
+                
             />
             <button
                 onClick={() => handleClick(email, pass, firstName, lastName, age)}
+                onKeyUp={() => handleClick(email, pass, firstName, lastName, age)}
             >
                 {title}
             </button>

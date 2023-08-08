@@ -19,7 +19,10 @@ const Login = () => {
                 }));
                 history('/')
             })
-            .catch(console.error)        
+            .catch((error) => {
+                const {err} = error.code
+                console.log(err)
+            })        
     }
     
     return ( 
