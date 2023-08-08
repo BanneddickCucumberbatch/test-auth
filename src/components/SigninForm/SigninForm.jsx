@@ -1,21 +1,26 @@
 import { useState } from "react";
+import "./signinForm.css";
 
-const Form = ({title, handleClick}) => {
+const SigninForm = ({title, handleClick}) => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     return ( 
-        <div>
+        <div className="form-container">
             <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} 
-                placeholder="email"
+                placeholder="E-mail"
+                required
             />
             <input
                 type="password"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
-                placeholder="password" 
+                placeholder="Password"
+                required
+                minLength={8}
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])"
             />
             <button
                 onClick={() => handleClick(email, pass)}
@@ -26,4 +31,4 @@ const Form = ({title, handleClick}) => {
      );
 }
  
-export {Form};
+export {SigninForm};
